@@ -1,5 +1,10 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+  <a class="navbar-brand" href="/">
+    <img src="https://www.clipartkey.com/mpngs/m/13-139978_car-repair-clipart-group-phillips-66-logo.png" width="30" height="30" alt="">
   </a>
+  <h1>Mary's Workshop</h1>
+
+  <% if user_signed_in? %>
+  <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete  %>
+  <% end %>
 </nav>
