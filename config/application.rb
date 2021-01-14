@@ -20,6 +20,8 @@ module TallerMecanico
       g.template_engine :erb
       g.test_framework  :test_unit, fixture: true
     end
+
+    config.assets.initialize_on_precompile = false
   end
 
 end
