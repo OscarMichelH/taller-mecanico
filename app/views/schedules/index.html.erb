@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h1>Citas</h1>
+  <table class="table">
+    <thead>
+      <tr>
+                  <th>Cliente</th>
+                  <th>Horario</th>
+                  <th>Descripcion</th>
+                  <th>Diagnostico Previo</th>
+                <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @schedules.each do |schedule| %>
+        <tr>
+                      <td>
+              <%= schedule.name %>
+            </td>
+                      <td>
+              <%= schedule.time %>
+            </td>
+                      <td>
+              <%= schedule.description %>
+            </td>
+                      <td>
+              <%= schedule.preview_diagnostic %>
+            </td>
+                    <td>
+          <%= link_to 'Ver', schedule, class:"btn btn-light min-width-btn" %>
+          <%= link_to 'Editar', edit_schedule_path(schedule),class:"btn btn-primary min-width-btn"  %>
+          <%= link_to 'Borrar', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger min-width-btn"%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Schedule', new_schedule_path,class:"btn btn-success min-width-btn" %>
+</div>

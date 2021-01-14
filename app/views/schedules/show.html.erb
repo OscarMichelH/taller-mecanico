@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1>Schedule Details</h1>
+  <%= form_with(model: @schedule, local: true) do |form| %>
+                  <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name ,class:"form-control", readonly:true%>
+        </div>
+                        <div class="form-group">
+          <%= form.label :time %>
+          <%= form.datetime_select :time ,class:"form-control", readonly:true%>
+        </div>
+                        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description ,class:"form-control", readonly:true%>
+        </div>
+                        <div class="form-group">
+          <%= form.label :preview_diagnostic %>
+          <%= form.text_area :preview_diagnostic ,class:"form-control", readonly:true%>
+        </div>
+            <% end %>
+  <%= link_to 'Edit', edit_schedule_path(@schedule),class:"btn btn-primary min-width-btn" %>
+  <%= link_to 'Back', schedules_path,class:"btn btn-light min-width-btn" %>
+</div>
